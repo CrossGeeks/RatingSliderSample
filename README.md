@@ -1,1 +1,1 @@
-# SlideRatingSample
+# RatingSliderSample
