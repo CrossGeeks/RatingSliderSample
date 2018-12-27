@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:CustomSlider" 
+             x:Class="CustomSlider.MainPage">
+
+        <StackLayout VerticalOptions="CenterAndExpand"
+                     Padding="20">
+        
+        <local:RatingSlider x:Name="positionSlider"
+                              HorizontalOptions="FillAndExpand"
+                              ItemSpacing="5"
+                              SelectedPosition="0"
+                              NumberOfItems="5" />
+            
+          <Label>
+               <Label.Triggers>
+                    <DataTrigger TargetType="Label"
+                                 Binding="{Binding Source={x:Reference positionSlider},
+                                                   Path=SelectedPosition}"
+                                 Value="1">
+                        <Setter Property="Text" Value="Poor" />
+                    </DataTrigger>
+                    <DataTrigger TargetType="Label"
+                                 Binding="{Binding Source={x:Reference positionSlider},
+                                                   Path=SelectedPosition}"
+                                 Value="2">
+                        <Setter Property="Text" Value="Fair" />
+                    </DataTrigger>
+                   <DataTrigger TargetType="Label"
+                                 Binding="{Binding Source={x:Reference positionSlider},
+                                                   Path=SelectedPosition}"
+                                 Value="3">
+                        <Setter Property="Text" Value="Average" />
+                    </DataTrigger>
+                   <DataTrigger TargetType="Label"
+                                 Binding="{Binding Source={x:Reference positionSlider},
+                                                   Path=SelectedPosition}"
+                                 Value="4">
+                        <Setter Property="Text" Value="Good" />
+                    </DataTrigger>
+                   <DataTrigger TargetType="Label"
+                                 Binding="{Binding Source={x:Reference positionSlider},
+                                                   Path=SelectedPosition}"
+                                 Value="5">
+                        <Setter Property="Text" Value="Excellent" />
+                    </DataTrigger>
+                </Label.Triggers>
+          </Label>
+       </StackLayout>
+</ContentPage>
